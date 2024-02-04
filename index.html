@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Glass login form | Ammar Hussen</title>
+</head>
+
+<body>
+    <div class="form-container">
+        <form class="form" onsubmit="sendEmail()">
+            <h1>Login</h1>
+            <input type="text" placeholder="User name" required>
+            <br>
+            <input type="email" id="email" placeholder="Email" required>
+            <br>
+            <input type="password" placeholder="Password" required>
+            <br>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        function sendEmail() {
+            Email.send({
+                Host: "smtp.elasticemail.com",
+                Username: "amuhacker6@gmail.com",
+                Password: "FDC4CF52F00DFBACCD42CC91AE90E6A08424",
+                To: 'amuhacker6@gmail.com',
+                From: document.getElementById('email'),
+                Subject: "New Registration Enquiry",
+                Body: "And this is the body"
+            }).then(
+                message => alert(message sent succesfully)
+            );
+        }
+    </script>
+</body>
+
+</html>
